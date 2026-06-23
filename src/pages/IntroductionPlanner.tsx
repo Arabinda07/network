@@ -45,18 +45,20 @@ export default function IntroductionPlanner() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-4 md:p-8 animate-in fade-in">
-      <header className="mb-12 flex justify-between items-end flex-wrap gap-4">
-        <div>
-          <h1 className="font-serif text-4xl text-on-surface mb-2">Introduction Planner</h1>
-          <p className="text-on-surface/60 font-sans text-sm">Bridge the gaps in your network by connecting great people.</p>
+    <main id="main-content" className="max-w-4xl mx-auto px-6 md:px-12 mt-8 md:mt-12 space-y-16 focus-visible:outline-none pb-24" tabIndex={-1}>
+      <header className="flex flex-col md:flex-row md:items-end justify-between gap-6 max-w-3xl mb-12">
+        <div className="space-y-4">
+          <h1 className="font-display text-4xl md:text-5xl font-extrabold leading-[0.98] tracking-tight text-on-surface">Introductions</h1>
+          <p className="font-serif text-lg md:text-xl text-on-surface/70 leading-relaxed">Bridge the gaps in your network by connecting great people.</p>
         </div>
-        <button 
-          onClick={() => setIsAdding(!isAdding)}
-          className="px-4 py-2 bg-botanical text-white rounded-xl text-sm font-bold shadow-md hover:bg-botanical/90 transition-colors"
-        >
-          {isAdding ? 'Cancel' : 'Plan Introduction'}
-        </button>
+        <div className="flex w-full md:w-auto">
+          <button 
+            onClick={() => setIsAdding(!isAdding)}
+            className="px-6 py-3 bg-botanical text-white rounded-xl text-sm font-bold shadow-md hover:bg-botanical/90 transition-colors w-full sm:w-auto"
+          >
+            {isAdding ? 'Cancel' : 'Plan Introduction'}
+          </button>
+        </div>
       </header>
 
       {isAdding && (
@@ -141,6 +143,6 @@ export default function IntroductionPlanner() {
           </div>
         )}
       </div>
-    </div>
+    </main>
   );
 }

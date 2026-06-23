@@ -10,7 +10,7 @@ export default function Layout() {
 
   useEffect(() => {
     if (!settings.onboarding_completed) {
-      navigate('/onboarding', { replace: true });
+      navigate('/welcome', { replace: true });
     }
   }, [settings.onboarding_completed, navigate]);
 

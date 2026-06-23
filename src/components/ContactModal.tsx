@@ -75,7 +75,7 @@ export default function ContactModal({ isOpen, onClose, contactId }: ContactModa
           <XMarkIcon className="w-5 h-5" />
         </button>
 
-        <h2 className="font-display font-bold text-2xl mb-6">
+        <h2 className="font-display font-extrabold text-3xl md:text-4xl text-on-surface tracking-tight mb-8">
           {existingContact ? 'Edit Contact' : 'New Contact'}
         </h2>
 

@@ -68,17 +68,14 @@ export default function SettingsManager() {
   };
 
   return (
-    <main id="main-content" className="max-w-4xl mx-auto px-6 md:px-12 mt-8 focus-visible:outline-none animate-in fade-in pb-24" tabIndex={-1}>
-      <header className="mb-12 flex items-center gap-3">
-        <Cog6ToothIcon className="w-8 h-8 text-botanical" />
-        <div>
-          <h1 className="font-display text-4xl font-bold text-on-surface mb-2">
-            Settings
-          </h1>
-          <p className="font-serif text-lg text-on-surface/60">
-            Configure your workspace and manage your data.
-          </p>
-        </div>
+    <main id="main-content" className="max-w-4xl mx-auto px-6 md:px-12 mt-8 md:mt-12 space-y-16 focus-visible:outline-none pb-24 animate-in fade-in" tabIndex={-1}>
+      <header className="mb-12 max-w-3xl space-y-4">
+        <h1 className="font-display text-4xl md:text-5xl font-extrabold leading-[0.98] tracking-tight text-on-surface">
+          Settings
+        </h1>
+        <p className="font-serif text-lg md:text-xl text-on-surface/70 leading-relaxed">
+          Configure your workspace and manage your data.
+        </p>
       </header>
 
       <div className="space-y-12">
@@ -121,7 +118,7 @@ export default function SettingsManager() {
              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-border-subtle">
                <div>
                   <h3 className="font-bold">Import Backup</h3>
-                  <p className="text-sm text-on-surface/60 mt-1">Restore your data from a previously exported JSON file. <strong className="text-red-500 font-medium">This will overwrite your current data.</strong></p>
+                  <p className="text-sm text-on-surface/60 mt-1">Restore your data from a previously exported JSON file. <strong className="text-clay font-medium">This will overwrite your current data.</strong></p>
                </div>
                <button 
                  onClick={() => fileInputRef.current?.click()}
@@ -140,12 +137,12 @@ export default function SettingsManager() {
 
              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pt-2">
                <div>
-                  <h3 className="font-bold text-red-600">Danger Zone</h3>
+                  <h3 className="font-bold text-clay">Danger Zone</h3>
                   <p className="text-sm text-on-surface/60 mt-1">Permanently delete all your contacts, interactions, and settings.</p>
                </div>
                <button 
                  onClick={handleReset}
-                 className="flex items-center justify-center gap-2 px-4 py-2 bg-red-50 text-red-600 border border-red-200 rounded-xl text-sm font-bold shadow-sm hover:bg-red-100 transition-colors whitespace-nowrap"
+                 className="flex items-center justify-center gap-2 px-4 py-2 bg-clay/10 text-clay border border-clay/20 rounded-xl text-sm font-bold shadow-sm hover:bg-clay/20 transition-colors whitespace-nowrap"
                >
                  <TrashIcon className="w-4 h-4" /> Delete All Data
                </button>

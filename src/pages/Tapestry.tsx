@@ -20,9 +20,9 @@ export default function Tapestry() {
   }, {} as Record<string, Contact[]>);
 
   return (
-    <main id="main-content" className="max-w-5xl mx-auto px-6 md:px-12 mt-8 md:mt-16 space-y-16 focus-visible:outline-none" tabIndex={-1}>
-      <header className="flex flex-col md:flex-row md:items-end justify-between gap-6 max-w-5xl">
-        <div className="space-y-4 max-w-3xl">
+    <main id="main-content" className="max-w-4xl mx-auto px-6 md:px-12 mt-8 md:mt-12 space-y-16 focus-visible:outline-none pb-24" tabIndex={-1}>
+      <header className="flex flex-col md:flex-row md:items-end justify-between gap-6 max-w-3xl">
+        <div className="space-y-4">
           <h1 className="font-display text-4xl md:text-5xl font-extrabold leading-[0.98] tracking-tight text-on-surface">
             People
           </h1>
@@ -63,12 +63,12 @@ export default function Tapestry() {
               <h2 className="font-sans font-bold tracking-widest uppercase text-sm text-on-surface/50 border-b border-border-subtle pb-4">
                 {domain}
               </h2>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
                 {domainContacts.map(contact => (
                   <Link 
                     to={`/contact/${contact.id}`} 
                     key={contact.id}
-                    className="p-6 rounded-[24px] border border-border-subtle bg-[var(--surface-current-bg)] hover:border-border-medium transition-colors flex flex-col items-center text-center gap-4 group shadow-sm hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-botanical"
+                    className="p-6 rounded-[24px] border border-border-subtle bg-[var(--surface-bg)] hover:border-border-medium transition-colors flex flex-col items-center text-center gap-4 group shadow-sm hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-botanical"
                   >
                     <div className="w-16 h-16 rounded-full bg-botanical/10 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform border border-border-subtle">
                       <span className="font-display font-extrabold text-2xl text-botanical">{contact.first_name[0]}</span>

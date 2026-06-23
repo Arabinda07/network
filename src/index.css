@@ -6,10 +6,10 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --color-botanical: oklch(0.47 0.18 135);
-  --color-sky: oklch(0.54 0.16 245);
-  --color-honey: oklch(0.59 0.13 80);
-  --color-clay: oklch(0.53 0.13 35);
+  --color-botanical: #275239;
+  --color-sky: #4f8ab5;
+  --color-honey: #d99a4c;
+  --color-clay: #b55c4f;
   --color-paper: var(--app-color-paper);
   --color-sage: var(--app-color-sage);
   --color-on-surface: var(--app-color-on-surface);
@@ -20,26 +20,28 @@
   --color-border-medium: var(--app-color-border-medium);
   --color-surface-hover: var(--app-color-surface-hover);
 
-  --font-display: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Spectral", ui-serif, Georgia, serif;
   --font-serif: "Spectral", ui-serif, Georgia, serif;
   --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
 
-  --radius-sm: 12px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
-  --radius-xl: 32px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
   --radius-full: 9999px;
 }
 
 :root {
-  --app-color-paper: oklch(0.985 0.012 135);
-  --app-color-sage: oklch(0.965 0.022 135);
-  --app-color-elevated: oklch(1 0 0);
-  --app-color-glow: oklch(1 0 0 / 0.4);
-  --app-color-on-surface: #252525;
-  --app-color-border-subtle: oklch(0 0 0 / 0.05);
-  --app-color-border-medium: oklch(0 0 0 / 0.1);
-  --app-color-surface-hover: oklch(0 0 0 / 0.05);
+  --app-color-paper: #fcfcfc;
+  --app-color-sage: #f2f5f3;
+  --app-color-elevated: #f5f5f4;
+  --app-color-glow: rgba(0, 0, 0, 0.05);
+  --app-color-on-surface: #0a0a0a;
+  --app-color-border-subtle: rgba(0, 0, 0, 0.08);
+  --app-color-border-medium: rgba(0, 0, 0, 0.15);
+  --app-color-surface-hover: rgba(0, 0, 0, 0.03);
+  --surface-bg: var(--app-color-elevated);
+  --surface-current-bg: var(--surface-bg);
   background-color: var(--color-paper);
   color: var(--color-on-surface);
   
@@ -127,14 +129,16 @@
 }
 
 .dark {
-  --app-color-paper: oklch(0.18 0.015 135);
-  --app-color-sage: oklch(0.22 0.022 135);
-  --app-color-elevated: oklch(0.26 0.025 135);
-  --app-color-glow: oklch(0.47 0.18 135 / 0.08); /* VERY subtle botanical glow */
-  --app-color-on-surface: oklch(0.95 0 0);
-  --app-color-border-subtle: oklch(1 1 1 / 0.05);
-  --app-color-border-medium: oklch(1 1 1 / 0.1);
-  --app-color-surface-hover: oklch(1 1 1 / 0.05);
+  --app-color-paper: #0a0a0a;
+  --app-color-sage: #161a17;
+  --app-color-elevated: #121212;
+  --app-color-glow: rgba(39, 82, 57, 0.08); /* VERY subtle botanical glow */
+  --app-color-on-surface: #fcfcfc;
+  --app-color-border-subtle: rgba(255, 255, 255, 0.06);
+  --app-color-border-medium: rgba(255, 255, 255, 0.12);
+  --app-color-surface-hover: rgba(255, 255, 255, 0.04);
+  --surface-bg: var(--app-color-elevated);
+  --surface-current-bg: var(--surface-bg);
   background-color: var(--color-paper);
   color: var(--color-on-surface);
 

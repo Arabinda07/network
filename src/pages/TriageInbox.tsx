@@ -22,19 +22,16 @@ export default function TriageInbox() {
   const totalItems = pendingReflections.length + upcomingHooks.length + pendingIntros.length;
 
   return (
-    <main id="main-content" className="max-w-4xl mx-auto px-6 md:px-12 mt-8 focus-visible:outline-none animate-in fade-in" tabIndex={-1}>
-      <header className="mb-12 flex items-center justify-between">
-        <div>
-          <h1 className="font-display text-4xl font-bold text-on-surface mb-2 flex items-center gap-3">
-            <InboxArrowDownIcon className="w-8 h-8 text-botanical" />
-            Triage Inbox
-          </h1>
-          <p className="font-serif text-lg text-on-surface/60">
-            {totalItems > 0 
-              ? `You have ${totalItems} items needing your attention.`
-              : 'Your inbox is clear. Take a breath.'}
-          </p>
-        </div>
+    <main id="main-content" className="max-w-4xl mx-auto px-6 md:px-12 mt-8 md:mt-12 space-y-16 focus-visible:outline-none pb-24 animate-in fade-in" tabIndex={-1}>
+      <header className="mb-12 max-w-3xl space-y-4">
+        <h1 className="font-display text-4xl md:text-5xl font-extrabold leading-[0.98] tracking-tight text-on-surface">
+          Triage Inbox
+        </h1>
+        <p className="font-serif text-lg md:text-xl text-on-surface/70 leading-relaxed">
+          {totalItems > 0 
+            ? `You have ${totalItems} items needing your attention.`
+            : 'Your inbox is clear. Take a breath.'}
+        </p>
       </header>
 
       <div className="space-y-12">

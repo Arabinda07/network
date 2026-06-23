@@ -54,7 +54,7 @@ export default function ReflectionDesk() {
   const selectedContact = selectedContactId ? selectors.getContact(store, selectedContactId) : null;
 
   return (
-    <main id="main-content" className="max-w-5xl mx-auto px-6 md:px-12 mt-8 md:mt-16 space-y-16 focus-visible:outline-none" tabIndex={-1}>
+    <main id="main-content" className="max-w-4xl mx-auto px-6 md:px-12 mt-8 md:mt-12 space-y-16 focus-visible:outline-none pb-24" tabIndex={-1}>
       
       {/* Page Greeting */}
       <header className="space-y-4 max-w-3xl">

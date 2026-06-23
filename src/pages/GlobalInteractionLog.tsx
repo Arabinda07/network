@@ -21,10 +21,10 @@ export default function GlobalInteractionLog() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-4 md:p-8 animate-in fade-in">
-      <header className="mb-12">
-        <h1 className="font-serif text-4xl text-on-surface mb-2">Interaction Log</h1>
-        <p className="text-on-surface/60 font-sans text-sm">Flow of your interactions across your entire sanctuary.</p>
+    <main id="main-content" className="max-w-4xl mx-auto px-6 md:px-12 mt-8 md:mt-12 space-y-16 focus-visible:outline-none pb-24" tabIndex={-1}>
+      <header className="mb-12 max-w-3xl space-y-4">
+        <h1 className="font-display text-4xl md:text-5xl font-extrabold leading-[0.98] tracking-tight text-on-surface">Interaction Log</h1>
+        <p className="font-serif text-lg md:text-xl text-on-surface/70 leading-relaxed">Flow of your interactions across your entire sanctuary.</p>
       </header>
 
       <div className="relative border-l-2 border-border-subtle ml-6 md:ml-8 space-y-12 pb-12">
@@ -75,6 +75,6 @@ export default function GlobalInteractionLog() {
           </div>
         )}
       </div>
-    </div>
+    </main>
   );
 }

@@ -52,10 +52,10 @@ export default function AnchorProfile() {
         <ArrowLeftIcon className="w-4 h-4" /> Back to People
       </Link>
 
-      <header className="space-y-8 relative">
+      <header className="space-y-8 relative group">
         <button 
           onClick={() => setIsEditModalOpen(true)}
-          className="absolute top-0 right-0 p-3 bg-surface-hover hover:bg-black/10 dark:hover:bg-white/10 rounded-full transition-colors text-on-surface/50 hover:text-on-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/50 dark:focus-visible:ring-white/50"
+          className="absolute top-0 right-0 p-3 bg-surface-hover hover:bg-black/10 dark:hover:bg-white/10 rounded-full transition-colors text-on-surface/50 hover:text-on-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/50 dark:focus-visible:ring-white/50 opacity-100 sm:opacity-0 group-hover:opacity-100 focus-visible:opacity-100"
         >
           <PencilSquareIcon className="w-5 h-5" />
         </button>
@@ -68,13 +68,13 @@ export default function AnchorProfile() {
               {contact.first_name} {contact.last_name || ''}
             </h1>
             <div className="flex flex-wrap items-center gap-3 mt-4">
-              <span className="px-3 py-1.5 bg-[var(--color-surface-hover)] rounded-[8px] font-sans text-xs font-bold uppercase tracking-widest text-on-surface/60">
+              <span className="px-3 py-1.5 bg-[var(--app-color-surface-hover)] rounded-[8px] font-sans text-xs font-bold uppercase tracking-widest text-on-surface/60">
                 {contact.domain}
               </span>
-              <span className="px-3 py-1.5 bg-[var(--color-surface-hover)] rounded-[8px] font-sans text-xs font-bold uppercase tracking-widest text-on-surface/60">
+              <span className="px-3 py-1.5 bg-[var(--app-color-surface-hover)] rounded-[8px] font-sans text-xs font-bold uppercase tracking-widest text-on-surface/60">
                 {contact.circle} circle
               </span>
-              <span className="px-3 py-1.5 bg-sky/10 rounded-[8px] font-sans text-xs font-bold uppercase tracking-widest text-sky mix-blend-multiply">
+              <span className="px-3 py-1.5 bg-[var(--app-color-surface-hover)] rounded-[8px] font-sans text-xs font-bold uppercase tracking-widest text-botanical">
                 {contact.lifecycle_stage.replace(/_/g, ' ')} stage
               </span>
             </div>
@@ -117,7 +117,7 @@ export default function AnchorProfile() {
           <div className="space-y-6">
             {interactions.length > 0 ? interactions.map(interaction => (
               <div key={interaction.id} className="relative pl-6 border-l border-border-medium">
-                <div className="absolute w-3 h-3 bg-botanical/20 rounded-full -left-[6.5px] top-1.5 border-2 border-white dark:border-[var(--color-surface-base)]" />
+                <div className="absolute w-3 h-3 bg-botanical rounded-full -left-[6.5px] top-1.5 border-2 border-[var(--color-paper)]" />
                 <div className="mb-1 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-on-surface/40">
                   <span>{format(parseISO(interaction.occurred_at), 'MMMM d, yyyy')}</span>
                   <span>·</span>

@@ -89,7 +89,7 @@ export default function Onboarding() {
         
         {onboarding_step <= 3 && (
           <div className="space-y-6">
-            <h1 className="font-serif text-3xl text-center text-on-surface mb-2">{currentStepData.title}</h1>
+            <h1 className="font-display text-3xl md:text-4xl font-extrabold text-center text-on-surface mb-2">{currentStepData.title}</h1>
             <p className="text-center text-on-surface/60 font-sans text-sm">{
               onboarding_step === 1 ? "Name 1–3 people you'd reach out to immediately if something significant happened in your work or life." :
               onboarding_step === 2 ? "Name 1–3 people you genuinely value but haven't spoken to in a while." :
@@ -132,7 +132,7 @@ export default function Onboarding() {
 
         {onboarding_step === 4 && (
           <div className="space-y-6">
-            <h1 className="font-serif text-3xl text-center text-on-surface mb-2">When is your push day?</h1>
+            <h1 className="font-display text-3xl md:text-4xl font-extrabold text-center text-on-surface mb-2">When is your push day?</h1>
             <p className="text-center text-on-surface/60 font-sans text-sm">Pick one day each week. That's when we might surface your batch of people to reach out to.</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-8">
               {['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'].map(day => (
@@ -150,7 +150,7 @@ export default function Onboarding() {
         
         {onboarding_step === 5 && (
           <div className="space-y-6">
-            <h1 className="font-serif text-3xl text-center text-on-surface mb-2">Bring your network in</h1>
+            <h1 className="font-display text-3xl md:text-4xl font-extrabold text-center text-on-surface mb-2">Bring your network in</h1>
             <p className="text-center text-on-surface/60 font-sans text-sm">You can upload a CSV or sync contacts from Google. (This is a placeholder for now!)</p>
             
             <div className="p-8 border-2 border-dashed border-border-medium rounded-[24px] text-center mt-8">
@@ -159,19 +159,29 @@ export default function Onboarding() {
           </div>
         )}
 
-        <div className="flex justify-between mt-12 pt-6 border-t border-border-subtle">
-          {onboarding_step > 1 ? (
-             <button onClick={() => setStep(onboarding_step - 1)} className="px-6 py-2 rounded-xl text-sm font-bold text-on-surface/50 hover:bg-surface-hover transition-colors">
-               Back
-             </button>
-          ) : <div></div>}
+        <div className="flex justify-between mt-12 pt-6 border-t border-border-subtle items-center">
+          <div className="flex gap-2">
+            {onboarding_step > 1 ? (
+               <button onClick={() => setStep(onboarding_step - 1)} className="px-6 py-2 rounded-xl text-sm font-bold text-on-surface/50 hover:bg-surface-hover transition-colors">
+                 Back
+               </button>
+            ) : null}
+          </div>
           
-          <button 
-            onClick={handleNext} 
-            className="px-6 py-2 bg-botanical text-white rounded-xl text-sm font-bold shadow-md hover:bg-botanical/90 transition-colors"
-          >
-            {onboarding_step === 5 ? 'Done' : 'Next'}
-          </button>
+          <div className="flex items-center gap-4">
+            <button 
+              onClick={handleComplete}
+              className="text-sm font-bold text-on-surface/40 hover:text-on-surface/70 transition-colors"
+            >
+              Skip All
+            </button>
+            <button 
+              onClick={handleNext} 
+              className="px-6 py-2 bg-botanical text-white rounded-xl text-sm font-bold shadow-md hover:bg-botanical/90 transition-colors"
+            >
+              {onboarding_step === 5 ? 'Done' : 'Next'}
+            </button>
+          </div>
         </div>
       </div>
     </div>

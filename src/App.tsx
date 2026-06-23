@@ -8,6 +8,8 @@ import HookBank from './pages/HookBank';
 import WinterAudit from './pages/WinterAudit';
 import AnchorProfile from './pages/AnchorProfile';
 import Onboarding from './pages/Onboarding';
+import Landing from './pages/Landing';
+import FAQ from './pages/FAQ';
 import NetworkMap from './pages/NetworkMap';
 import GlobalInteractionLog from './pages/GlobalInteractionLog';
 import IntroductionPlanner from './pages/IntroductionPlanner';
@@ -19,6 +21,8 @@ export default function App() {
     <TooltipProvider>
       <BrowserRouter>
         <Routes>
+          <Route path="/welcome" element={<Landing />} />
+          <Route path="/faq" element={<FAQ />} />
           <Route path="/onboarding" element={<Onboarding />} />
           <Route path="/" element={<Layout />}>
             <Route index element={<ReflectionDesk />} />

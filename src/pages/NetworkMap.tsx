@@ -7,17 +7,17 @@ import { XMarkIcon, UserCircleIcon, ChatBubbleLeftIcon } from '@heroicons/react/
 import { formatDistanceToNow, parseISO } from 'date-fns';
 
 const DOMAIN_COLORS: Record<Domain, string> = {
-  personal: '#E8A3A3',
-  professional: '#A3BAE8',
-  community: '#A3E8B5',
-  hybrid: '#E8C5A3'
+  personal: '#b55c4f', // clay
+  professional: '#4f8ab5', // sky
+  community: '#275239', // botanical
+  hybrid: '#d99a4c' // honey
 };
 
 const CIRCLE_COLORS: Record<Circle | 'dormant', string> = {
-  core: '#D4A853',
-  orbit: '#5C8A3C',
-  peripheral: '#7B8FA1',
-  dormant: '#C4B9AC'
+  core: '#d99a4c', // honey
+  orbit: '#275239', // botanical
+  peripheral: '#4f8ab5', // sky
+  dormant: '#9ca3af' // gray-400
 };
 
 export default function NetworkMap() {
@@ -121,18 +121,18 @@ export default function NetworkMap() {
 
   return (
     <div className="flex flex-col h-[calc(100vh-130px)] animate-in fade-in">
-      <div className="bg-white/80 backdrop-blur-md border-b border-border-subtle p-4 flex flex-col md:flex-row md:items-center gap-4 justify-between shrink-0 shadow-sm z-10 relative">
+      <div className="bg-[var(--color-paper)]/90 backdrop-blur-md border-b border-border-subtle p-4 flex flex-col md:flex-row md:items-center gap-4 justify-between shrink-0 shadow-sm z-10 relative">
         <div className="flex items-center gap-4 overflow-x-auto hide-scrollbar sm:pb-0 w-full">
            <div className="flex bg-[var(--surface-bg)] p-1 rounded-lg border border-border-medium shrink-0">
              <button
                onClick={() => setColorBy('circle')}
-               className={`px-3 py-1.5 text-sm font-bold rounded-md transition-colors ${colorBy === 'circle' ? 'bg-white shadow-sm text-black' : 'text-on-surface/50 hover:text-on-surface'}`}
+               className={`px-3 py-1.5 text-sm font-bold rounded-md transition-colors ${colorBy === 'circle' ? 'bg-[var(--color-on-surface)] shadow-sm text-[var(--color-paper)]' : 'text-on-surface/50 hover:text-on-surface'}`}
              >
                Colour by Circle
              </button>
              <button
                onClick={() => setColorBy('domain')}
-               className={`px-3 py-1.5 text-sm font-bold rounded-md transition-colors ${colorBy === 'domain' ? 'bg-white shadow-sm text-black' : 'text-on-surface/50 hover:text-on-surface'}`}
+               className={`px-3 py-1.5 text-sm font-bold rounded-md transition-colors ${colorBy === 'domain' ? 'bg-[var(--color-on-surface)] shadow-sm text-[var(--color-paper)]' : 'text-on-surface/50 hover:text-on-surface'}`}
              >
                Colour by Domain
              </button>
@@ -166,7 +166,7 @@ export default function NetworkMap() {
         </div>
       </div>
 
-      <div className="flex-1 relative" ref={containerRef} style={{ backgroundColor: '#FAF7F2' }}>
+      <div className="flex-1 relative bg-[var(--color-paper)]" ref={containerRef}>
         {contactsCount < 3 ? (
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <p className="font-serif italic text-on-surface/50">Add at least 3 contacts to see your network map take shape.</p>
@@ -179,17 +179,17 @@ export default function NetworkMap() {
                 nodeAutoColorBy={undefined}
                 nodeColor={node => (node as any).color}
                 nodeRelSize={1}
-                linkColor={() => 'rgba(0,0,0,0.2)'}
+                linkColor={() => document.documentElement.classList.contains('dark') ? 'rgba(255,255,255,0.12)' : 'rgba(0,0,0,0.15)'}
                 linkWidth={(link: any) => link.strength === 'strong' ? 2.5 : link.strength === 'weak' ? 1 : 0.5}
                 nodeLabel="name"
                 onNodeClick={handleNodeClick}
-                backgroundColor="#FAF7F2"
+                backgroundColor="transparent"
             />
         )}
       </div>
 
       {selectedNode && (
-          <div className="fixed inset-y-0 right-0 w-80 bg-white border-l border-border-subtle shadow-2xl p-6 flex flex-col z-50 animate-in slide-in-from-right">
+          <div className="fixed inset-y-0 right-0 w-80 bg-[var(--color-paper)] border-l border-border-subtle shadow-2xl p-6 flex flex-col z-50 animate-in slide-in-from-right">
               <button 
                   onClick={() => setSelectedNode(null)}
                   className="absolute top-4 right-4 p-2 rounded-full hover:bg-surface-hover transition-colors"
@@ -200,8 +200,8 @@ export default function NetworkMap() {
 
               <div className="mt-8 space-y-6 flex-1">
                   <div>
-                      <h2 className="font-serif text-2xl font-bold mb-2">{selectedNode.name}</h2>
-                      <span className="inline-block px-2.5 py-1 text-xs font-bold rounded-md bg-botanical/10 text-botanical capitalize">
+                      <h2 className="font-display text-4xl font-extrabold leading-[0.98] tracking-tight mb-3">{selectedNode.name}</h2>
+                      <span className="inline-block px-2.5 py-1 text-[11px] uppercase tracking-widest font-bold rounded-md bg-botanical/10 text-botanical">
                           {selectedNode.c.circle} Circle
                       </span>
                   </div>
@@ -231,7 +231,7 @@ export default function NetworkMap() {
                       <UserCircleIcon className="w-5 h-5" /> View profile
                   </button>
                   <button 
-                      className="w-full flex items-center justify-center gap-2 bg-white text-on-surface border border-border-medium px-4 py-3 rounded-xl font-bold hover:bg-surface-hover transition-colors"
+                      className="w-full flex items-center justify-center gap-2 bg-transparent text-on-surface border border-border-medium px-4 py-3 rounded-xl font-bold hover:bg-surface-hover transition-colors"
                   >
                       <ChatBubbleLeftIcon className="w-5 h-5" /> Log interaction
                   </button>
