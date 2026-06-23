@@ -1,0 +1,6 @@
+{
+  "name": "Personal Relationship OS",
+  "description": "A calm, human-first personal relationship OS for nurturing meaningful connections.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
